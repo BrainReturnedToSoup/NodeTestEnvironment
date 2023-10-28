@@ -47,7 +47,7 @@ function initPassportLocal() {
 
   passport.deserializeUser((user, done) => {
     userCollection
-      .findOne({ _id: id })
+      .findOne({ _id: user._id })
       .then((user) => {
         done(null, user);
       })
